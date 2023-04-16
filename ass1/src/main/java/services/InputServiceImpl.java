@@ -23,12 +23,8 @@ public class InputServiceImpl implements InputService{
         System.out.println("Bitte geben Sie nun die gewünschte Sprache ein.\n0 - Deutsch\n1 - Englisch\n");
         int langId = this.scanner.nextInt();
 
-        try {
-            return new CrawlerInputInformation(url, depth, langId);
-        } catch (MalformedURLException e) {
-            //TODO: log msg
-            return null;
-        }
+        return new CrawlerInputInformation(url, depth, langId);
+
     }
 
     @PostConstruct
