@@ -1,4 +1,7 @@
-import java.util.Scanner;
+import models.CrawlerInputInformation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import services.InputService;
 
 public class Main {
     /*
@@ -13,16 +16,11 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("Welcome to the Webcrawler!\n\n");
-        //Input: Depht, target lang, url
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Bitte geben Sie die gewünschte URL an:\n");
-        String url = scanner.next();
-        System.out.println("Bitte geben Sie nun die gewünschte Tiefe an:\n");
-        int depth = scanner.nextInt();
-        System.out.println("Bitte geben Sie nun die gewünschte Sprache ein.\n0 - Deutsch\n1 - Englisch\n");
-        int langId = scanner.nextInt();
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        App app = context.getBean(App.class);
 
-        //Output: headings (translated)
+        CrawlerInputInformation input = app.getInput();
+        int end = 0;
 
     }
 }
