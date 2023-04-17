@@ -1,32 +1,63 @@
 package services;
 
 import models.CrawlerInputInformation;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.HttpClients;
+import models.CrawlerOutputInformation;
+import models.HtmlData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.net.URISyntaxException;
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 
 @Service
 public class CrawlerServiceImpl implements CrawlerService{
 
-    private HttpClient httpClient;
+    @Autowired
+    private HtmlDataService htmlDataService;
 
-    public String getHtmlDataFromCrawlerInputInformation(CrawlerInputInformation inputInformation) {
+    public CrawlerOutputInformation getCrawlerOutputInformation(CrawlerInputInformation inputInformation, String previousUrl){
+        CrawlerOutputInformation outputInformation = new CrawlerOutputInformation();
+        String htmlString = null;
         try {
-            URIBuilder uriBuilder = new URIBuilder(inputInformation.getUrl());
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-            //TODO:handle error case
+            htmlString = htmlDataService.getHtmlStringFromCrawlerInputInformation(inputInformation);
+            HtmlData htmlData = htmlDataService.extractDataFromHtmlString(htmlString);
+
+            outputInformation.setHeaders(htmlData.getHeaders());
+            outputInformation.setLinks(htmlData.getLinks());
+
+        } catch (IOException e) {
+            outputInformation.setBrokenLink(true);
         }
-        return null;
+        catch (IllegalArgumentException e){
+            outputInformation.setBrokenLink(true);
+        }
+        catch (Exception e){
+            outputInformation.setBrokenLink(true);
+        }
+
+        outputInformation.setUrl(inputInformation.getUrl());
+        outputInformation.setDepth(inputInformation.getDepth());
+        outputInformation.setPreviousUrl(previousUrl);
+
+        return outputInformation;
     }
 
-    @PostConstruct
-    private void initializeServiceObjects(){
-        this.httpClient = HttpClients.createDefault();
+    public List<CrawlerOutputInformation> crawlRecursively(CrawlerInputInformation inputInformation, String previousUrl){
+        List<CrawlerOutputInformation> result = new LinkedList<CrawlerOutputInformation>();
+        CrawlerOutputInformation output = getCrawlerOutputInformation(inputInformation, previousUrl);
+        result.add(output);
+
+        if(inputInformation.getDepth() > 0 && !output.isBrokenLink()){
+            for (String link : output.getLinks()) {
+                CrawlerInputInformation recursiveInput = new CrawlerInputInformation();
+                recursiveInput.setUrl(link);
+                recursiveInput.setDepth(inputInformation.getDepth()-1);
+                recursiveInput.setLanguage(inputInformation.getLanguage());
+
+                result.addAll(crawlRecursively(recursiveInput,inputInformation.getUrl()));
+            }
+        }
+        return result;
     }
 }

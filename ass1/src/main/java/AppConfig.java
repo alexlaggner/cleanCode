@@ -9,8 +9,8 @@ public class AppConfig {
         return new InputServiceImpl();
     }
     @Bean
-    public HtmlParsingService htmlParsingService(){
-        return new HtmlParsingServiceImpl();
+    public HtmlDataService htmlParsingService(){
+        return new HtmlDataServiceImpl();
     }
     @Bean
     public CrawlerService crawlerService(){

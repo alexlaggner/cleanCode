@@ -20,6 +20,7 @@ public class Main {
         App app = context.getBean(App.class);
 
         CrawlerInputInformation input = app.getInput();
+        app.testHtml(input);
         int end = 0;
 
     }
