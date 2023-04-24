@@ -1,7 +1,7 @@
-package services;
+package services.impl;
 
-import models.CrawlerInputInformation;
-import models.HtmlData;
+import models.dto.CrawlerInputInformation;
+import models.dto.HtmlData;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
@@ -10,11 +10,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.springframework.stereotype.Service;
+import services.interfaces.HtmlDataService;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 @Service
 public class HtmlDataServiceImpl implements HtmlDataService {

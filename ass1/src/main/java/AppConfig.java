@@ -1,6 +1,7 @@
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import services.*;
+import services.impl.*;
+import services.interfaces.*;
 
 @Configuration
 public class AppConfig {
@@ -16,7 +17,11 @@ public class AppConfig {
     public CrawlerService crawlerService(){
         return new CrawlerServiceImpl();
     }
-
+    @Bean
+    public TranslationService translationService(){return new TranslationServiceImpl(); }
+    @Bean
+    public MarkDownExportService markDownExportService(){return new MarkDownExportServiceImpl();
+    }
     @Bean
     public App app(){
         return new App();

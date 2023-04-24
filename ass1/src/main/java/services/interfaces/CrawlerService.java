@@ -1,10 +1,8 @@
-package services;
+package services.interfaces;
 
-import models.CrawlerInputInformation;
-import models.CrawlerOutputInformation;
-import org.springframework.stereotype.Service;
+import models.dto.CrawlerInputInformation;
+import models.dto.CrawlerOutputInformation;
 
-import java.io.IOException;
 import java.util.List;
 
 public interface CrawlerService {

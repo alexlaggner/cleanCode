@@ -29,6 +29,8 @@
             <artifactId>jsoup</artifactId>
             <version>1.14.3</version>
         </dependency>
-
     </dependencies>
+    <properties>
+        <output.directory>${project.build.directory}/output</output.directory>
+    </properties>
 </project>

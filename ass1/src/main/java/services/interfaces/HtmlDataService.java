@@ -1,7 +1,7 @@
-package services;
+package services.interfaces;
 
-import models.CrawlerInputInformation;
-import models.HtmlData;
+import models.dto.CrawlerInputInformation;
+import models.dto.HtmlData;
 
 import java.io.IOException;
 

@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e6d18d9-e059-460f-b042-9151f2361658" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/CrawlerOutputInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/HtmlData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_markdownj_markdownj_core_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/impl/MarkDownExportServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/MarkDownExportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/TranslationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CrawlerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CrawlerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CrawlerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/CrawlerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/HtmlParsingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/HtmlDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/HtmlParsingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/HtmlDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/CrawlerInputInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dto/CrawlerInputInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/CrawlerOutputInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dto/CrawlerOutputInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/HtmlData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dto/HtmlData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/enumerations/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/enumerations/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CrawlerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/CrawlerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/CrawlerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/CrawlerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/HtmlDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/HtmlDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/HtmlDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/HtmlDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/InputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/InputService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/InputServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/InputServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,13 +55,31 @@
   <component name="ProjectId" id="2Mh4C3WY7PdqrPyedsrwn1jM13X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="models.dto" />
+      <recent name="services.interfaces" />
+      <recent name="services.impl" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clean compile install -o" />
+      <command value="mvn dependency resolve" />
+      <command value="mvn dependency:resolve" />
+      <command value="mvn clean install" />
+      <command value="mvn org.apache.maven.plugins:maven-dependency-plugin:3.2.0:get -DremoteRepositories=http://repo1.maven.org/maven2/ -Dartifact=markdownj:markdownj:1.0.2b -Ddest=./markdownj-1.0.2b.jar" />
+      <command value="mvn mvn org.apache.maven.plugins:maven-dependency-plugin:3.2.0:get -DremoteRepositories=http://repo1.maven.org/maven2/ -Dartifact=markdownj:markdownj:1.0.2b -Ddest=./markdownj-1.0.2b.jar" />
+      <command value="mvn clean" />
       <command value="mvn clean compile install" />
     </option>
   </component>
@@ -113,13 +140,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>23</line>
+          <line>30</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/services/CrawlerServiceImpl.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/CrawlerServiceImpl.java</url>
           <line>35</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

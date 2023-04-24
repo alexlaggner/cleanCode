@@ -1,17 +1,19 @@
-package services;
+package services.impl;
 
-import models.CrawlerInputInformation;
-import models.CrawlerOutputInformation;
-import models.HtmlData;
+import models.dto.CrawlerInputInformation;
+import models.dto.CrawlerOutputInformation;
+import models.dto.HtmlData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import services.interfaces.CrawlerService;
+import services.interfaces.HtmlDataService;
 
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class CrawlerServiceImpl implements CrawlerService{
+public class CrawlerServiceImpl implements CrawlerService {
 
     @Autowired
     private HtmlDataService htmlDataService;

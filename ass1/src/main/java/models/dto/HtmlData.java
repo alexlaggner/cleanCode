@@ -1,4 +1,4 @@
-package models;
+package models.dto;
 
 import java.util.LinkedList;
 import java.util.List;
