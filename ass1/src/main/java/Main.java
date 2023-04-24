@@ -1,7 +1,9 @@
-import models.CrawlerInputInformation;
-import org.springframework.beans.factory.annotation.Autowired;
+import models.dto.CrawlerInputInformation;
+import models.dto.CrawlerOutputInformation;
+import models.enumerations.Language;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import services.InputService;
+
+import java.util.List;
 
 public class Main {
     /*
@@ -15,11 +17,17 @@ public class Main {
     store the results in a single markdown file (.md extension
      */
     public static void main(String[] args) {
-        System.out.println("Welcome to the Webcrawler!\n\n");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         App app = context.getBean(App.class);
 
+        System.out.println("Welcome to the Webcrawler!\n\n");
         CrawlerInputInformation input = app.getInput();
+        List<CrawlerOutputInformation> output = app.crawl(input);
+
+        if(!input.getLanguage().equals(Language.DEFAULT)) {
+            app.translateOutput(output, input.getLanguage());
+        }
+        app.export(input,output);
         int end = 0;
 
     }

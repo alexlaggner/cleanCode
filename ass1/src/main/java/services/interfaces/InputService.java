@@ -1,6 +1,6 @@
-package services;
+package services.interfaces;
 
-import models.CrawlerInputInformation;
+import models.dto.CrawlerInputInformation;
 import org.springframework.stereotype.Service;
 
 @Service

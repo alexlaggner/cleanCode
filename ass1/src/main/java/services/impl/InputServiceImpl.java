@@ -1,15 +1,15 @@
-package services;
+package services.impl;
 
-import models.CrawlerInputInformation;
-import org.apache.logging.log4j.Logger;
+import models.dto.CrawlerInputInformation;
+import models.enumerations.Language;
 import org.springframework.stereotype.Service;
+import services.interfaces.InputService;
 
 import javax.annotation.PostConstruct;
-import java.net.MalformedURLException;
 import java.util.Scanner;
 
 @Service
-public class InputServiceImpl implements InputService{
+public class InputServiceImpl implements InputService {
     private Scanner scanner;
 
     public CrawlerInputInformation getCrawlerInputInformation()
@@ -20,15 +20,14 @@ public class InputServiceImpl implements InputService{
         System.out.println("Bitte geben Sie nun die gewünschte Tiefe an:\n");
         int depth = this.scanner.nextInt();
 
-        System.out.println("Bitte geben Sie nun die gewünschte Sprache ein.\n0 - Deutsch\n1 - Englisch\n");
+        System.out.println("Bitte geben Sie nun die gewünschte Sprache ein.\n0 - Deutsch\n1 - Englisch\nWenn die Texte nicht übersetzt werden sollen, geben Sie irgendeinen Wert ein, der nicht in der obigen Liste ist.\n");
         int langId = this.scanner.nextInt();
 
-        try {
-            return new CrawlerInputInformation(url, depth, langId);
-        } catch (MalformedURLException e) {
-            //TODO: log msg
-            return null;
+        if(Language.getByLangId(langId) == null){
+            langId = -1;
         }
+
+        return new CrawlerInputInformation(url, depth, langId);
     }
 
     @PostConstruct

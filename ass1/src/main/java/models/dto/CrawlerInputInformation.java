@@ -1,4 +1,4 @@
-package models;
+package models.dto;
 
 import models.enumerations.Language;
 
@@ -6,23 +6,23 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class CrawlerInputInformation {
-    private URL url;
+    private String url;
     private int depth;
     private Language language;
 
     public CrawlerInputInformation(){}
 
-    public CrawlerInputInformation(String url, int depth, int langId) throws MalformedURLException {
-        this.url = new URL(url);
+    public CrawlerInputInformation(String url, int depth, int langId) {
+        this.url = url;
         this.depth = depth;
         this.language = Language.getByLangId(langId);
     }
 
-    public URL getUrl() {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl(URL url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
