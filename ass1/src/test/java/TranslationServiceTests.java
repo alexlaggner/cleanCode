@@ -27,27 +27,31 @@ import services.interfaces.TranslationService;
 @SpringBootTest(classes = TranslationServiceImpl.class)
 public class TranslationServiceTests {
 
+    //Mocked Entities
     @MockBean
     private HttpClient httpClient;
     @MockBean
     private List<HttpResponse> responses;
 
+    private HttpResponse firstHttpResponse = Mockito.mock(HttpResponse.class);
+    private HttpResponse secondHttpResponse = Mockito.mock(HttpResponse.class);
+    private HttpResponse thirdHttpResponse = Mockito.mock(HttpResponse.class);
+    //Class to test
     @Autowired
     private TranslationService translationService;
 
+    //variables for setup
     private List<HttpPost> httpPosts = new LinkedList<>();
     private List<String> responseString = new LinkedList<>();
 
     private List<String> headings;
     private Language language;
 
+    //Information on API Endpoint
     private static final String API_ENDPOINT = "google-translator9.p.rapidapi.com";
     private static final String API_KEY="f5d9689c49msh52e52af4cc1a8c1p1125dbjsn7963f5a59953";
     private static final String URL ="https://google-translator9.p.rapidapi.com/v2";
 
-    HttpResponse response1 = Mockito.mock(HttpResponse.class);
-    HttpResponse response2 = Mockito.mock(HttpResponse.class);
-    HttpResponse response3 = Mockito.mock(HttpResponse.class);
 
     @Before
     public void setUp() {
@@ -108,14 +112,14 @@ public class TranslationServiceTests {
 
     @Test
     public void testTranslation() throws Exception {
-        Mockito.when(httpClient.execute(httpPosts.get(0))).thenReturn((response1));
-        Mockito.when(response1.getEntity()).thenReturn(new StringEntity(responseString.get(0)));
+        Mockito.when(httpClient.execute(httpPosts.get(0))).thenReturn((firstHttpResponse));
+        Mockito.when(firstHttpResponse.getEntity()).thenReturn(new StringEntity(responseString.get(0)));
 
-        Mockito.when(httpClient.execute(httpPosts.get(1))).thenReturn((response2));
-        Mockito.when(response2.getEntity()).thenReturn(new StringEntity(responseString.get(1)));
+        Mockito.when(httpClient.execute(httpPosts.get(1))).thenReturn((secondHttpResponse));
+        Mockito.when(secondHttpResponse.getEntity()).thenReturn(new StringEntity(responseString.get(1)));
 
-        Mockito.when(httpClient.execute(httpPosts.get(2))).thenReturn((response3));
-        Mockito.when(response3.getEntity()).thenReturn(new StringEntity(responseString.get(2)));
+        Mockito.when(httpClient.execute(httpPosts.get(2))).thenReturn((thirdHttpResponse));
+        Mockito.when(thirdHttpResponse.getEntity()).thenReturn(new StringEntity(responseString.get(2)));
 
         translationService.translateHeadings(headings,language);
         Assert.assertEquals("Header1", headings.get(0));
