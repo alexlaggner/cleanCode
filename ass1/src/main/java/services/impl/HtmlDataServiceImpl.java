@@ -9,6 +9,7 @@ import org.apache.http.util.EntityUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 import services.interfaces.HtmlDataService;
 
@@ -28,13 +29,18 @@ public class HtmlDataServiceImpl implements HtmlDataService {
     public HtmlData extractDataFromHtmlString(String htmlContent){
         Document jsoupDocument = Jsoup.parse(htmlContent);
         HtmlData data = new HtmlData();
-        for (Element link : jsoupDocument.select("a")) {
-            data.getLinks().add(link.attr("href"));
+        Elements links = jsoupDocument.select("a");
+        Elements headers = jsoupDocument.select("h1, h2, h3, h4, h5, h6");
+        if(links != null) {
+            for (Element link : links) {
+                data.getLinks().add(link.attr("href"));
+            }
         }
-        for (Element header : jsoupDocument.select("h1, h2, h3, h4, h5, h6")) {
-            data.getHeaders().add(header.text());
+        if(headers != null) {
+            for (Element header : headers) {
+                data.getHeaders().add(header.text());
+            }
         }
-
         return data;
     }
     @PostConstruct
