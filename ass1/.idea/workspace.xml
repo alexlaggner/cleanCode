@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e6d18d9-e059-460f-b042-9151f2361658" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_markdownj_markdownj_core_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/impl/MarkDownExportServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/MarkDownExportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/TranslationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/HtmlDataServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/InputServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MarkDownExportServiceTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TranslationServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/CrawlerInputInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dto/CrawlerInputInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/CrawlerOutputInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dto/CrawlerOutputInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/HtmlData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/dto/HtmlData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/enumerations/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/enumerations/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CrawlerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/CrawlerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/CrawlerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/CrawlerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/HtmlDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/HtmlDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/HtmlDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/HtmlDataServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/InputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/InputService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/InputServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/InputServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/HtmlDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/HtmlDataServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.HtmlDataServiceTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ass1" />
@@ -103,8 +90,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HtmlDataServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ass1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HtmlDataServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HtmlDataServiceTests" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
