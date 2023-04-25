@@ -28,7 +28,7 @@ public class CrawlerServiceImpl implements CrawlerService {
             outputInformation.setHeaders(htmlData.getHeaders());
             outputInformation.setLinks(htmlData.getLinks());
 
-        } catch (IOException e) {
+        }catch (IOException e) {
             outputInformation.setBrokenLink(true);
         }
         catch (IllegalArgumentException e){

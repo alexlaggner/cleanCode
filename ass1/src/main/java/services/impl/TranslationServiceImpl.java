@@ -52,6 +52,7 @@ public class TranslationServiceImpl implements TranslationService {
 
         StringEntity entity = new StringEntity("{\"q\":\""+text+"\",\"target\":\""+language.getCode()+"\",\"format\":\"text\"}",
                 ContentType.APPLICATION_JSON);
+
         httpPost.setEntity(entity);
 
         return httpPost;
