@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e6d18d9-e059-460f-b042-9151f2361658" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceGetOutputInformationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/CrawlerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/CrawlerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CrawlerServiceTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MarkDownExportServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MarkDownExportServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TranslationServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TranslationServiceTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MarkDownExportServiceTests">
+  <component name="RunManager" selected="JUnit.TranslationServiceTests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ass1" />
@@ -108,15 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HtmlDataServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ass1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HtmlDataServiceTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MarkDownExportServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ass1" />
       <option name="PACKAGE_NAME" value="" />
@@ -126,13 +113,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TranslationServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ass1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TranslationServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TranslationServiceTests" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MarkDownExportServiceTests" />
         <item itemvalue="JUnit.CrawlerServiceCrawlRecursivelyTests" />
         <item itemvalue="JUnit.CrawlerServiceGetOutputInformationTests" />
-        <item itemvalue="JUnit.HtmlDataServiceTests" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -177,7 +173,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java</url>
-          <line>43</line>
+          <line>50</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
