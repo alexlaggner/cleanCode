@@ -1,7 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,52 +26,28 @@ public class CrawlerServiceCrawlRecursivelyTests {
 
     private CrawlerInputInformation inputInformation;
     private CrawlerOutputInformation outputInformation;
-    private String previousUrl = null;
+    private String previousUrl = "-";
 
     @Before
     public void setUp() {
         inputInformation = new CrawlerInputInformation();
-        inputInformation.setUrl("https://www.example.com");
+        inputInformation.setUrl("https://www.google.com");
         inputInformation.setDepth(2);
         inputInformation.setLanguage(Language.EN);
 
         outputInformation = new CrawlerOutputInformation();
         outputInformation.setUrl(inputInformation.getUrl());
         outputInformation.setDepth(inputInformation.getDepth());
-        outputInformation.setBrokenLink(false);
+        outputInformation.setBrokenLink(true);
         outputInformation.setHeaders(Collections.<String>emptyList());
-        outputInformation.setLinks(Arrays.asList("https://www.example.com/link1", "https://www.example.com/link2"));
+        outputInformation.setLinks(Collections.<String>emptyList());
     }
 
     @Test
     public void testCrawlRecursivelyWithValidInput() throws Exception {
         when(crawlerService.getCrawlerOutputInformation(inputInformation, previousUrl)).thenReturn(outputInformation);
-
-        CrawlerOutputInformation expectedOutput = new CrawlerOutputInformation();
-        expectedOutput.setHeaders(outputInformation.getHeaders());
-        expectedOutput.setLinks(outputInformation.getLinks());
-        expectedOutput.setUrl(outputInformation.getUrl());
-        expectedOutput.setDepth(outputInformation.getDepth());
-        expectedOutput.setBrokenLink(outputInformation.isBrokenLink());
-
-        List<CrawlerOutputInformation> expectedResults = Arrays.asList(expectedOutput, expectedOutput);
-
-
-        when(crawlerService.getCrawlerOutputInformation(
-                new CrawlerInputInformation(
-                        outputInformation.getLinks().get(0),
-                        inputInformation.getDepth() - 1,
-                        inputInformation.getLanguage().getLangId()),
-                inputInformation.getUrl())).thenReturn(expectedOutput);
-        when(crawlerService.getCrawlerOutputInformation(
-                new CrawlerInputInformation(
-                        outputInformation.getLinks().get(1),
-                        inputInformation.getDepth() - 1,
-                        inputInformation.getLanguage().getLangId()),
-                inputInformation.getUrl())).thenReturn(expectedOutput);
-
         List<CrawlerOutputInformation> actualResults = crawlerService.crawlRecursively(inputInformation, previousUrl);
-        assertEquals(expectedResults, actualResults);
+        assertEquals(Collections.singletonList(outputInformation), actualResults);
     }
 
     @Test

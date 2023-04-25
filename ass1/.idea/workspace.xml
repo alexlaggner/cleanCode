@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e6d18d9-e059-460f-b042-9151f2361658" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TranslationServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TranslationServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/MarkDownExportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/MarkDownExportServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/interfaces/TranslationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/TranslationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CrawlerServiceGetOutputInformationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceGetOutputInformationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +68,7 @@
       <command value="mvn org.apache.maven.plugins:maven-dependency-plugin:3.2.0:get -DremoteRepositories=http://repo1.maven.org/maven2/ -Dartifact=markdownj:markdownj:1.0.2b -Ddest=./markdownj-1.0.2b.jar" />
       <command value="mvn mvn org.apache.maven.plugins:maven-dependency-plugin:3.2.0:get -DremoteRepositories=http://repo1.maven.org/maven2/ -Dartifact=markdownj:markdownj:1.0.2b -Ddest=./markdownj-1.0.2b.jar" />
       <command value="mvn clean" />
+      <command value="mvn test" />
       <command value="mvn clean compile install" />
     </option>
   </component>
@@ -78,14 +84,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TranslationServiceTests">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="ass1" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CrawlerServiceCrawlRecursivelyTests">
     <configuration name="CrawlerServiceCrawlRecursivelyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ass1" />
       <option name="PACKAGE_NAME" value="" />
@@ -99,6 +98,15 @@
       <module name="ass1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CrawlerServiceGetOutputInformationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HtmlDataServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ass1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HtmlDataServiceTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,10 +132,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TranslationServiceTests" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.MarkDownExportServiceTests" />
         <item itemvalue="JUnit.CrawlerServiceCrawlRecursivelyTests" />
+        <item itemvalue="JUnit.TranslationServiceTests" />
+        <item itemvalue="JUnit.MarkDownExportServiceTests" />
+        <item itemvalue="JUnit.HtmlDataServiceTests" />
         <item itemvalue="JUnit.CrawlerServiceGetOutputInformationTests" />
       </list>
     </recent_temporary>
@@ -162,11 +170,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/CrawlerServiceImpl.java</url>
           <line>35</line>
           <option name="timeStamp" value="10" />
@@ -175,11 +178,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java</url>
           <line>50</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/CrawlerServiceGetOutputInformationTests.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

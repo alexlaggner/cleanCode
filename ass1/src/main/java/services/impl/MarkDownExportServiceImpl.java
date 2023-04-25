@@ -2,7 +2,6 @@ package services.impl;
 
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import services.interfaces.MarkDownExportService;
 
