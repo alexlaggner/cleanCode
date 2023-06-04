@@ -21,6 +21,13 @@ public class Main {
 
         //------------ Ass2
         List<CrawlerInputInformation> inputInformation = app.getMultipleInputInformation();
+        List<CrawlerOutputInformation> crawlerOutputInformation = app.crawlConcurrently(inputInformation);
+        if(!inputInformation.isEmpty()){
+            Language language = inputInformation.get(0).getLanguage();
+            if(language != null && !language.equals(Language.DEFAULT)){
+                app.translateOutput(crawlerOutputInformation, language);
+            }
+        }
         System.out.println("ENDE\nDanke, dass Sie sich für diesen Webcrawler entschieden haben!");
     }
 }

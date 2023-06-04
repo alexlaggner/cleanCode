@@ -2,6 +2,9 @@ import concurrency.CrawlerThread;
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
 import models.enumerations.Language;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import services.interfaces.CrawlerService;
@@ -26,6 +29,8 @@ public class App {
 
     @Autowired
     private MarkDownExportService markDownExportService;
+
+    private static final Logger logger = LogManager.getLogger(App.class);
 
     public CrawlerInputInformation getInput(){
         CrawlerInputInformation inputInformation = null;
@@ -73,13 +78,13 @@ public class App {
             try {
                 thread.join();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
         for (CrawlerThread thread : threads) {
             output.addAll(thread.getOutputInformation());
         }
-        
+
         return output;
     }
 }
