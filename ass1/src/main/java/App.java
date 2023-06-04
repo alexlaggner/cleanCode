@@ -9,6 +9,7 @@ import services.interfaces.MarkDownExportService;
 import services.interfaces.TranslationService;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 @Component
@@ -49,6 +50,13 @@ public class App {
             markDownExportService.exportCrawlerOutputInformation(inputInformation,outputInformation);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    //Assignment 2
+    public List<CrawlerOutputInformation> crawlConcurrently(List<CrawlerInputInformation> inputInformation){
+        List<CrawlerOutputInformation> output = new LinkedList<>();
+        for (CrawlerInputInformation crawlerInputInformation : inputInformation) {
+            //TODO: start crawling
         }
     }
 }
