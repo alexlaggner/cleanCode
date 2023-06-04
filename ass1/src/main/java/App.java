@@ -1,3 +1,4 @@
+import concurrency.CrawlerThread;
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
 import models.enumerations.Language;
@@ -59,9 +60,26 @@ public class App {
 
     public List<CrawlerOutputInformation> crawlConcurrently(List<CrawlerInputInformation> inputInformation){
         List<CrawlerOutputInformation> output = new LinkedList<>();
+        List<CrawlerThread> threads = new LinkedList<>();
+
         for (CrawlerInputInformation crawlerInputInformation : inputInformation) {
-            //TODO: start crawling
+            threads.add(new CrawlerThread(crawlerInputInformation));
         }
-        return null;
+
+        for (CrawlerThread thread : threads) {
+            thread.start();
+        }
+        for (CrawlerThread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        for (CrawlerThread thread : threads) {
+            output.addAll(thread.getOutputInformation());
+        }
+        
+        return output;
     }
 }
