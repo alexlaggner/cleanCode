@@ -11,13 +11,16 @@ public class Main {
         App app = context.getBean(App.class);
 
         System.out.println("Welcome to the Webcrawler!\n\n");
-        CrawlerInputInformation input = app.getInput();
+        //------------ Ass1
+       /* CrawlerInputInformation input = app.getInput();
         List<CrawlerOutputInformation> output = app.crawl(input);
-
         if(!input.getLanguage().equals(Language.DEFAULT)) {
             app.translateOutput(output, input.getLanguage());
         }
-        app.export(input,output);
+        app.export(input,output);*/
+
+        //------------ Ass2
+        List<CrawlerInputInformation> inputInformation = app.getMultipleInputInformation();
         System.out.println("ENDE\nDanke, dass Sie sich für diesen Webcrawler entschieden haben!");
     }
 }

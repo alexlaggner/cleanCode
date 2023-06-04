@@ -4,6 +4,11 @@
     <list default="true" id="2e6d18d9-e059-460f-b042-9151f2361658" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/InputServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/InputServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/interfaces/InputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/InputService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,20 +82,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CrawlerServiceCrawlRecursivelyTests">
-    <configuration name="CrawlerServiceCrawlRecursivelyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ass1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CrawlerServiceCrawlRecursivelyTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrawlerServiceGetOutputInformationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CrawlerServiceCrawlRecursivelyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ass1" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CrawlerServiceGetOutputInformationTests" />
+      <option name="MAIN_CLASS_NAME" value="CrawlerServiceCrawlRecursivelyTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CrawlerServiceCrawlRecursivelyTests" />
         <item itemvalue="JUnit.TranslationServiceTests" />
         <item itemvalue="JUnit.MarkDownExportServiceTests" />
         <item itemvalue="JUnit.HtmlDataServiceTests" />
-        <item itemvalue="JUnit.CrawlerServiceGetOutputInformationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -171,6 +174,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java</url>
           <line>50</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/services/impl/InputServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import services.interfaces.InputService;
 
 import javax.annotation.PostConstruct;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 @Service
@@ -28,6 +30,18 @@ public class InputServiceImpl implements InputService {
         }
 
         return new CrawlerInputInformation(url, depth, langId);
+    }
+
+    @Override
+    public List<CrawlerInputInformation> getMultipleCrawlerInputInformation() {
+        List<CrawlerInputInformation> inputInformation = new LinkedList<>();
+        String proceed="";
+        do{
+            inputInformation.add(getCrawlerInputInformation());
+            System.out.println("Wollen Sie einen weiteren Crawlvorgang starten, geben sie bitte 'y' ein.\nWenn nicht, geben sie etwas Beliebiges anderes ein.");
+            proceed = scanner.next();
+        }while(proceed.equals("y"));
+        return inputInformation;
     }
 
     @PostConstruct

@@ -3,6 +3,8 @@ package services.interfaces;
 import models.dto.CrawlerInputInformation;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface InputService {
     /**
@@ -10,4 +12,5 @@ public interface InputService {
      * @return
      */
     public CrawlerInputInformation getCrawlerInputInformation();
+    public List<CrawlerInputInformation> getMultipleCrawlerInputInformation();
 }

@@ -53,10 +53,15 @@ public class App {
         }
     }
     //Assignment 2
+    public List<CrawlerInputInformation> getMultipleInputInformation(){
+        return inputService.getMultipleCrawlerInputInformation();
+    }
+
     public List<CrawlerOutputInformation> crawlConcurrently(List<CrawlerInputInformation> inputInformation){
         List<CrawlerOutputInformation> output = new LinkedList<>();
         for (CrawlerInputInformation crawlerInputInformation : inputInformation) {
             //TODO: start crawling
         }
+        return null;
     }
 }
