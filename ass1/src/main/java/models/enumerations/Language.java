@@ -24,7 +24,7 @@ public enum Language {
                 return lang;
             }
         }
-        return null;
+        return Language.DEFAULT;
     }
 
     public String getNameDe() {
