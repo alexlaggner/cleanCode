@@ -28,6 +28,7 @@ public class Main {
                 app.translateOutput(crawlerOutputInformation, language);
             }
         }
+        app.exportMultiple(inputInformation,crawlerOutputInformation);
         System.out.println("ENDE\nDanke, dass Sie sich für diesen Webcrawler entschieden haben!");
     }
 }

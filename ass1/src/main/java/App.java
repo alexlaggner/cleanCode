@@ -55,7 +55,7 @@ public class App {
         try {
             markDownExportService.exportCrawlerOutputInformation(inputInformation,outputInformation);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Could not export to .md file: "+ e.getMessage());
         }
     }
     //Assignment 2
@@ -68,7 +68,7 @@ public class App {
         List<CrawlerThread> threads = new LinkedList<>();
 
         for (CrawlerInputInformation crawlerInputInformation : inputInformation) {
-            threads.add(new CrawlerThread(crawlerInputInformation));
+            threads.add(new CrawlerThread(crawlerInputInformation,crawlerService));
         }
 
         for (CrawlerThread thread : threads) {
@@ -86,5 +86,13 @@ public class App {
         }
 
         return output;
+    }
+    public void exportMultiple(List<CrawlerInputInformation> inputInformation,
+                               List<CrawlerOutputInformation> outputInformation){
+        try {
+            markDownExportService.exportMultipleCrawlerOutputinformation(inputInformation, outputInformation);
+        }catch (IOException e){
+            logger.error("Could not export to .md file: "+ e.getMessage());
+        }
     }
 }
