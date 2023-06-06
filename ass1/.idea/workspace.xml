@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e6d18d9-e059-460f-b042-9151f2361658" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/MarkDownExportServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/MarkDownExportServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/interfaces/TranslationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/interfaces/TranslationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceCrawlRecursivelyTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CrawlerServiceGetOutputInformationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CrawlerServiceGetOutputInformationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +43,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -84,20 +77,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CrawlerServiceCrawlRecursivelyTests">
-    <configuration name="CrawlerServiceCrawlRecursivelyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ass1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CrawlerServiceCrawlRecursivelyTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrawlerServiceGetOutputInformationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CrawlerServiceCrawlRecursivelyTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ass1" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CrawlerServiceGetOutputInformationTests" />
+      <option name="MAIN_CLASS_NAME" value="CrawlerServiceCrawlRecursivelyTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -132,11 +123,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CrawlerServiceCrawlRecursivelyTests" />
         <item itemvalue="JUnit.TranslationServiceTests" />
         <item itemvalue="JUnit.MarkDownExportServiceTests" />
         <item itemvalue="JUnit.HtmlDataServiceTests" />
-        <item itemvalue="JUnit.CrawlerServiceGetOutputInformationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -175,9 +166,14 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/services/impl/TranslationServiceImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
