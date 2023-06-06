@@ -49,7 +49,7 @@ public class TranslationServiceImpl implements TranslationService {
                 }
             }
         } catch (IOException e) {
-            logger.error("Error translating the message: " + e.getMessage());
+            LoggerAdapter.logError(logger,("Error translating the message: " + e.getMessage()));
         }
         return translatedList;
     }

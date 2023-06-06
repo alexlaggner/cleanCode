@@ -55,7 +55,7 @@ public class App {
         try {
             markDownExportService.exportCrawlerOutputInformation(inputInformation,outputInformation);
         } catch (IOException e) {
-            logger.error("Could not export to .md file: "+ e.getMessage());
+            LoggerAdapter.logError(logger,("Could not export to .md file: "+ e.getMessage()));
         }
     }
     //Assignment 2
@@ -78,7 +78,7 @@ public class App {
             try {
                 thread.join();
             } catch (InterruptedException e) {
-                logger.error(e.getMessage());
+                LoggerAdapter.logError(logger,e.getMessage());
             }
         }
         for (CrawlerThread thread : threads) {
@@ -91,7 +91,7 @@ public class App {
             try {
                 markDownExportService.exportMultipleCrawlerOutputinformation(singleCrawlerResultDtoList);
             }catch (IOException e){
-                logger.error("Could not export to .md file: "+ e.getMessage());
+                LoggerAdapter.logError(logger,("Could not export to .md file: "+ e.getMessage()));
             }
     }
 }

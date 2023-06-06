@@ -3,11 +3,8 @@ package concurrency;
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
 import models.dto.SingleCrawlerResultDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import services.interfaces.CrawlerService;
 
-import java.util.LinkedList;
 import java.util.List;
 public class CrawlerThread extends Thread {
     private CrawlerService crawlerService;
