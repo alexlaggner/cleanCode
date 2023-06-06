@@ -1,10 +1,10 @@
+import adapters.LoggerAdapter;
 import concurrency.CrawlerThread;
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
+import models.dto.SingleCrawlerResultDTO;
 import models.enumerations.Language;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import services.interfaces.CrawlerService;
@@ -30,7 +30,7 @@ public class App {
     @Autowired
     private MarkDownExportService markDownExportService;
 
-    private static final Logger logger = LogManager.getLogger(App.class);
+    private static final Logger logger = LoggerAdapter.getLogger(App.class);
 
     public CrawlerInputInformation getInput(){
         CrawlerInputInformation inputInformation = null;
@@ -63,8 +63,8 @@ public class App {
         return inputService.getMultipleCrawlerInputInformation();
     }
 
-    public List<CrawlerOutputInformation> crawlConcurrently(List<CrawlerInputInformation> inputInformation){
-        List<CrawlerOutputInformation> output = new LinkedList<>();
+    public List<SingleCrawlerResultDTO> crawlConcurrently(List<CrawlerInputInformation> inputInformation){
+        List<SingleCrawlerResultDTO> output = new LinkedList<>();
         List<CrawlerThread> threads = new LinkedList<>();
 
         for (CrawlerInputInformation crawlerInputInformation : inputInformation) {
@@ -82,17 +82,16 @@ public class App {
             }
         }
         for (CrawlerThread thread : threads) {
-            output.addAll(thread.getOutputInformation());
+            output.add(thread.getOutputInformation());
         }
 
         return output;
     }
-    public void exportMultiple(List<CrawlerInputInformation> inputInformation,
-                               List<CrawlerOutputInformation> outputInformation){
-        try {
-            markDownExportService.exportMultipleCrawlerOutputinformation(inputInformation, outputInformation);
-        }catch (IOException e){
-            logger.error("Could not export to .md file: "+ e.getMessage());
-        }
+    public void exportMultiple(List<SingleCrawlerResultDTO> singleCrawlerResultDtoList){
+            try {
+                markDownExportService.exportMultipleCrawlerOutputinformation(singleCrawlerResultDtoList);
+            }catch (IOException e){
+                logger.error("Could not export to .md file: "+ e.getMessage());
+            }
     }
 }

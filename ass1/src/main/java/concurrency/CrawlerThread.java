@@ -2,6 +2,7 @@ package concurrency;
 
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
+import models.dto.SingleCrawlerResultDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import services.interfaces.CrawlerService;
@@ -11,23 +12,23 @@ import java.util.List;
 public class CrawlerThread extends Thread {
     private CrawlerService crawlerService;
 
-    private List<CrawlerOutputInformation> outputInformation = new LinkedList();
-    private final CrawlerInputInformation inputInformation;
+    private SingleCrawlerResultDTO crawlerResultDTO;
 
     public CrawlerThread(CrawlerInputInformation inputInformation,
                          CrawlerService crawlerService){
-        this.inputInformation=inputInformation;
+        this.crawlerResultDTO = new SingleCrawlerResultDTO();
+        this.crawlerResultDTO.setInputInformation(inputInformation);
         this.crawlerService = crawlerService;
     }
     @Override
     public void run(){
         System.out.println( this.getName() + " starting to crawl");
-        List<CrawlerOutputInformation> crawlerOutputInformation = crawlerService.crawlRecursively(inputInformation, "-");
-        this.outputInformation = crawlerOutputInformation;
+        List<CrawlerOutputInformation> crawlerOutputInformation = crawlerService.crawlRecursively(this.crawlerResultDTO.getInputInformation(), "-");
+        this.crawlerResultDTO.setOutputInformation(crawlerOutputInformation);
         System.out.println(this.getName() +  " finished crawling");
     }
 
-    public List<CrawlerOutputInformation> getOutputInformation(){
-        return this.outputInformation;
+    public SingleCrawlerResultDTO getOutputInformation(){
+        return this.crawlerResultDTO;
     }
 }

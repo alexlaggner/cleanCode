@@ -1,6 +1,7 @@
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
 import models.enumerations.Language;
+
 import org.junit.Before;
 import org.junit.Test;
 import services.impl.MarkDownExportServiceImpl;
@@ -74,7 +75,6 @@ public class MarkDownExportServiceTests {
         try {
             markDownExportService.exportCrawlerOutputInformation(inputInformation, outputInformation);
         } catch (IOException e) {
-            e.printStackTrace();
             fail();
         }
 
@@ -86,7 +86,6 @@ public class MarkDownExportServiceTests {
             actualOutput = actualOutput.replaceAll("\\s+", "");
             assertEquals(expectedOutput, actualOutput);
         } catch (IOException e) {
-            e.printStackTrace();
             fail();
         }
     }

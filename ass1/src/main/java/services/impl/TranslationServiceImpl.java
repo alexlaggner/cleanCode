@@ -1,5 +1,6 @@
 package services.impl;
 
+import adapters.LoggerAdapter;
 import models.enumerations.Language;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -9,6 +10,7 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +28,7 @@ public class TranslationServiceImpl implements TranslationService {
     private static final String API_ENDPOINT = "google-translator9.p.rapidapi.com";
     private static final String API_KEY = "f5d9689c49msh52e52af4cc1a8c1p1125dbjsn7963f5a59953";
     private static final String URL = "https://google-translator9.p.rapidapi.com/v2";
+    private static final Logger logger = LoggerAdapter.getLogger(TranslationServiceImpl.class);
     private HttpClient httpClient;
 
     public List<String> translateHeadings(List<String> headings, Language language) {
@@ -46,7 +49,7 @@ public class TranslationServiceImpl implements TranslationService {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Error translating the message: " + e.getMessage());
         }
         return translatedList;
     }

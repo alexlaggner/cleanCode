@@ -2,6 +2,7 @@ package services.impl;
 
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
+import models.dto.SingleCrawlerResultDTO;
 import org.springframework.stereotype.Service;
 import services.interfaces.MarkDownExportService;
 
@@ -26,14 +27,14 @@ public class MarkDownExportServiceImpl implements MarkDownExportService {
     }
 
     @Override
-    public void exportMultipleCrawlerOutputinformation(List<CrawlerInputInformation> inputInformation, List<CrawlerOutputInformation> outputInformation) throws IOException {
+    public void exportMultipleCrawlerOutputinformation(List<SingleCrawlerResultDTO> singleCrawlerResultDTOList) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(PATH));
-        for (CrawlerInputInformation crawlerInputInformation : inputInformation) {
-            printInput(writer, crawlerInputInformation);
-        }
-
-        for (CrawlerOutputInformation crawlerOutputInformation : outputInformation) {
-            printOutput(writer,crawlerOutputInformation);
+        for (SingleCrawlerResultDTO singleCrawlerResultDTO : singleCrawlerResultDTOList) {
+         printInput(writer,singleCrawlerResultDTO.getInputInformation());
+            for (CrawlerOutputInformation crawlerOutputInformation : singleCrawlerResultDTO.getOutputInformation()) {
+                printOutput(writer,crawlerOutputInformation);
+            }
+            writer.println("____________NEXT_CRAWLERRESULT____________________");
         }
         writer.close();
     }
