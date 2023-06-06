@@ -30,11 +30,11 @@ public class MarkDownExportServiceImpl implements MarkDownExportService {
     public void exportMultipleCrawlerOutputinformation(List<SingleCrawlerResultDTO> singleCrawlerResultDTOList) throws IOException {
         PrintWriter writer = new PrintWriter(new FileWriter(PATH));
         for (SingleCrawlerResultDTO singleCrawlerResultDTO : singleCrawlerResultDTOList) {
-         printInput(writer,singleCrawlerResultDTO.getInputInformation());
+            writer.println("____________NEXT_CRAWLERRESULT____________________");
+            printInput(writer,singleCrawlerResultDTO.getInputInformation());
             for (CrawlerOutputInformation crawlerOutputInformation : singleCrawlerResultDTO.getOutputInformation()) {
                 printOutput(writer,crawlerOutputInformation);
             }
-            writer.println("____________NEXT_CRAWLERRESULT____________________");
         }
         writer.close();
     }

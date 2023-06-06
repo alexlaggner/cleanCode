@@ -1,5 +1,6 @@
 import models.dto.CrawlerInputInformation;
 import models.dto.CrawlerOutputInformation;
+import models.dto.SingleCrawlerResultDTO;
 import models.enumerations.Language;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -21,14 +22,15 @@ public class Main {
 
         //------------ Ass2
         List<CrawlerInputInformation> inputInformation = app.getMultipleInputInformation();
-        List<CrawlerOutputInformation> crawlerOutputInformation = app.crawlConcurrently(inputInformation);
-        if(!inputInformation.isEmpty()){
-            Language language = inputInformation.get(0).getLanguage();
+        List<SingleCrawlerResultDTO> singleCrawlerResultDTOList = app.crawlConcurrently(inputInformation);
+
+        for (SingleCrawlerResultDTO singleCrawlerResultDTO : singleCrawlerResultDTOList) {
+            Language language = singleCrawlerResultDTO.getInputInformation().getLanguage();
             if(language != null && !language.equals(Language.DEFAULT)){
-                app.translateOutput(crawlerOutputInformation, language);
+                app.translateOutput(singleCrawlerResultDTO.getOutputInformation(), language);
             }
         }
-        app.exportMultiple(inputInformation,crawlerOutputInformation);
+        app.exportMultiple(singleCrawlerResultDTOList);
         System.out.println("ENDE\nDanke, dass Sie sich für diesen Webcrawler entschieden haben!");
     }
 }
